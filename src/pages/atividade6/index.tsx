@@ -6,9 +6,10 @@ import {
   DashboardContainer,
   InputContainer,
   InputWrapper,
-  ListContainer,
+  ResultWrapper,
   ResultsContainer,
 } from "../atividade2/styles";
+import { Result } from "./styles";
 
 export function Atividade6() {
   const [fila, setFila] = useState<string[]>([]);
@@ -29,9 +30,9 @@ export function Atividade6() {
   return (
     <DashboardContainer>
       <ResultsContainer>
-        <Text>Fila: </Text>
+        <Result>Fila: </Result>
         {fila.map((el, index) => (
-          <Text key={el + index.toString()}>{el}</Text>
+          <Result key={el + index.toString()}>{el}</Result>
         ))}
       </ResultsContainer>
 
@@ -43,12 +44,12 @@ export function Atividade6() {
             }}
             placeholder="Nome"
           />
-          <ButtonComponent onPress={() => handleAddName()} title="Calcular" />
+          <ButtonComponent onPress={() => handleAddName()} title="Adicionar" />
         </InputWrapper>
         <InputWrapper>
           <ButtonComponent
             onPress={() => handleDeleteLast()}
-            title="Deletar último"
+            title="Deletar primeiro"
           />
         </InputWrapper>
       </InputContainer>

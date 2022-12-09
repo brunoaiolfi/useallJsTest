@@ -6,7 +6,8 @@ import {
   DashboardContainer,
   InputContainer,
   InputWrapper,
-  ListContainer,
+  ResultWrapper,
+  Result,
   ResultsContainer,
 } from "./styles";
 
@@ -17,7 +18,7 @@ export function Atividade2() {
   const [numberToSearch, setNumberToSearch] = useState<number>();
   const [numberToAdd, setNumberToAdd] = useState<number>();
 
-  function handleAdd() {
+  function handleAddNumberToList() {
     if (numberToAdd && !list.includes(numberToAdd)) {
       const number = Number(numberToAdd);
 
@@ -25,7 +26,7 @@ export function Atividade2() {
     }
   }
 
-  function handleSearch() {
+  function handleSearchNumberIntoList() {
     if (numberToSearch) {
       const tempPosition = list.findIndex((el) => el === numberToSearch);
       setPosition(tempPosition == -1 ? undefined : tempPosition);
@@ -35,10 +36,10 @@ export function Atividade2() {
   return (
     <DashboardContainer>
       <ResultsContainer>
-        <Text>Posição: {position?.toString() ?? "--"}</Text>
-        <ListContainer>
-          <Text>Lista: {list.map((el) => <Text key={el}>{el};&nbsp;</Text>)}</Text>
-        </ListContainer>
+        <Result>Posição: {position?.toString() ?? "--"}</Result>
+        <ResultWrapper>
+          <Result>Lista: {list.map((el) => <Text key={el}>{el};&nbsp;</Text>)}</Result>
+        </ResultWrapper>
       </ResultsContainer>
 
       <InputContainer>
@@ -50,7 +51,7 @@ export function Atividade2() {
             }}
             placeholder="Adicionar número na lista"
           />
-          <ButtonComponent onPress={() => handleAdd()} title="Adicionar" />
+          <ButtonComponent onPress={() => handleAddNumberToList()} title="Adicionar" />
         </InputWrapper>
 
         <InputWrapper>
@@ -61,7 +62,7 @@ export function Atividade2() {
             }}
             placeholder="Buscar número na lista"
           />
-          <ButtonComponent onPress={() => handleSearch()} title="Buscar" />
+          <ButtonComponent onPress={() => handleSearchNumberIntoList()} title="Buscar" />
         </InputWrapper>
       </InputContainer>
     </DashboardContainer>

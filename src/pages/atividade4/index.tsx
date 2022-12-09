@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Text } from "react-native";
 import { Input } from "../../components/input";
 import {
   DashboardContainer,
   InputContainer,
   InputWrapper,
-  ListContainer,
+  ResultWrapper,
   ResultsContainer,
-} from "../atividade2/styles";
+  Result,
+} from "../atividade4/styles";
 import { ButtonComponent } from "../../components/ButtonComponent";
 
 export function Atividade4() {
@@ -38,13 +38,13 @@ export function Atividade4() {
   return (
     <DashboardContainer>
       <ResultsContainer>
-        <ListContainer>
-          <Text>Estado: {imcState}</Text>
-        </ListContainer>
+        <ResultWrapper>
+          <Result>Estado: {imcState}</Result>
+        </ResultWrapper>
 
-        <ListContainer>
-          <Text>IMC: {imc?.toFixed(2).toString() ?? "--"}</Text>
-        </ListContainer>
+        <ResultWrapper>
+          <Result>IMC: {imc?.toFixed(2).toString() ?? ""}</Result>
+        </ResultWrapper>
       </ResultsContainer>
 
       <InputContainer>

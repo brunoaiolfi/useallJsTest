@@ -11,6 +11,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Atividade4 } from "../pages/atividade4";
 import { Atividade5 } from "../pages/atividade5";
 import { Atividade6 } from "../pages/atividade6";
+import { Atividade1 } from "../pages/atividade1";
 
 export default function AppRoutes() {
   const theme = useTheme();
@@ -21,12 +22,22 @@ export default function AppRoutes() {
         headerShown: false,
         tabBarActiveTintColor: theme.colors.secondary,
         tabBarInactiveTintColor: theme.colors.text,
-        tabBarLabelPosition: "below-icon",
         tabBarStyle: {
-          height: 72,
+          height: 64,
+          paddingBottom: 12,
+          paddingTop: 12,
         },
       }}
     >
+      <Screen
+        name="Atividade 1"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="list" size={size} color={color} />
+          ),
+        }}
+        component={Atividade1}
+      />
       <Screen
         name="Atividade 2"
         options={{
@@ -38,12 +49,11 @@ export default function AppRoutes() {
       />
 
       <Screen
-        
         name="Atividade 4"
         component={Atividade4}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="attach-money" size={size} color={color} />
+            <Feather name="list" size={size} color={color} />
           ),
           unmountOnBlur: true
         }}
@@ -52,7 +62,7 @@ export default function AppRoutes() {
         name="Atividade 5"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="pie-chart" size={size} color={color} />
+            <Feather name="list" size={size} color={color} />
           ),
         }}
         component={Atividade5}
@@ -61,7 +71,7 @@ export default function AppRoutes() {
         name="Atividade 6"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="pie-chart" size={size} color={color} />
+            <Feather name="list" size={size} color={color} />
           ),
         }}
         component={Atividade6}

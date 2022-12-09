@@ -24,14 +24,16 @@ export const InputWrapper = styled.View`
 export const ResultWrapper = styled.View`
   display: flex;
   flex-direction: row;
-`;
 
-export const ResultsContainer= styled.View`
-  display: flex;
-  padding: 90px;
 `;
 
 export const Result = styled.Text`
   font-size: 16px;
   font-weight: 500;
+`;
+export const ResultsContainer = styled.View`
+  display: flex;
+  padding: 90px;
+
+
 `;

@@ -6,9 +6,10 @@ import {
   DashboardContainer,
   InputContainer,
   InputWrapper,
-  ListContainer,
+  ResultWrapper,
   ResultsContainer,
 } from "../atividade2/styles";
+import { Result } from "./styles";
 
 export function Atividade5() {
   const [pilha, setPilha] = useState<string[]>([]);
@@ -29,9 +30,9 @@ export function Atividade5() {
   return (
     <DashboardContainer>
       <ResultsContainer>
-        <Text>Pilha: </Text>
+        <Result>Pilha: </Result>
         {pilha.map((el, index) => (
-          <Text key={el + index.toString()}>{el}</Text>
+          <Result key={el + index.toString()}>{el}</Result>
         ))}
       </ResultsContainer>
 
@@ -43,7 +44,7 @@ export function Atividade5() {
             }}
             placeholder="Nome"
           />
-          <ButtonComponent onPress={() => handleAddName()} title="Calcular" />
+          <ButtonComponent onPress={() => handleAddName()} title="Adicionar" />
         </InputWrapper>
         <InputWrapper>
           <ButtonComponent

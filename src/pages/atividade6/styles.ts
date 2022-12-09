@@ -1,58 +1,37 @@
+import { FlatList } from "react-native";
 import styled from "styled-components/native";
-import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
+import { CardProps } from "../../components/cards/highlight";
 
-export const Container = styled.View`
+export const DashboardContainer = styled.View`
+  background-color: ${(props) => props.theme.colors.background};
   width: 100%;
   height: 100%;
-`;
 
-export const Header = styled.View`
-  background: ${({ theme }) => theme.colors.primary};
-  width: 100%;
-  height: 135px;
-
-  justify-content: flex-end;
-  align-items: center;
-
-  padding: 24px;
-`;
-
-export const TitlePage = styled.Text`
-  color: ${({ theme }) => theme.colors.shape};
-  font-size: 18px;
-`;
-
-export const Content = styled.View`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-`;
-
-export const ChartContainer = styled.View`
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-`;
-export const MonthSelect = styled.View`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-
   justify-content: space-between;
 `;
 
-export const MonthSelectButton = styled.TouchableOpacity`
-  width: 32px;
-  height: 24px;
+export const InputContainer = styled.View`
+  display: flex;
+  padding: 20px;
 `;
-export const SelectIcon = styled(Feather)`
-  font-size: 24px;
+export const InputWrapper = styled.View`
+  display: flex;
+  width: 100%;
+  margin-top: 18px;
 `;
 
-export const Month = styled.Text`
-  color: ${({ theme }) => theme.colors.title};
-  font-size: 18px;
-  font-weight: bold;
+export const ResultWrapper = styled.View`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ResultsContainer= styled.View`
+  display: flex;
+  padding: 90px;
+`;
+
+export const Result = styled.Text`
+  font-size: 16px;
+  font-weight: 500;
 `;
